@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@font-face {
+  font-family: Inter;
+  src: url(/assets/fonts/Inter_18pt-Regular.ttf);
+}
+
+// Colors
+$primary-color: #0A2540;
+$text-color: rgb(49, 98, 127);
+$highlight-color: #00D4FF;
+$white: #FFFFFF;
+$light-gray: #ADBDCC;
+
+// Font sizes
+$global-scale-size: 17px;
+$global-backbone-size: 35px;
+$global-content-size: 17px;
+$stats-heading-size: 24px;
+$line-height-main: 28px;
+$line-height-heading: 48px;
+
+body {
+  font-family: "Inter", serif;
+}
+
+.globe-section {
+  display: flex;
+  flex-direction: column;
+  background: $primary-color;
+  color: $text-color;
+  overflow-x: hidden;
+  overflow-y: hidden; // Prevent overflow of content
+
+  .container {
+    width: clamp(500px, 80%, 1080px);
+    margin: auto;
+    position: relative;
+  }
+
+  .canvas {
+    width: 100%;
+    overflow-y: hidden;
+  }
+
+  .globe-container {
+    position: absolute;
+    top: 0;
+    right: -300px;
+    width: 65%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  #global-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    z-index: 1;
+    padding: 60px 0;
+
+    #global-scale {
+      font-size: $global-scale-size;
+      color: $highlight-color;
+    }
+
+    #global-backbone {
+      color: $white;
+      font-size: $global-backbone-size;
+      line-height: $line-height-heading;
+    }
+
+    #global-content {
+      color: $light-gray;
+      font-size: $global-content-size;
+      line-height: $line-height-main;
+    }
+  }
+
+  #global-statistics {
+    display: flex;
+    gap: 60px;
+    width: clamp(500px, 100%, 1080px);
+    margin: auto;
+    z-index: 6;
+    margin-bottom: 200px;
+    position: relative;
+    transform: translateY(100%);
+
+    h3 {
+      color: $white;
+      font-size: $stats-heading-size;
+      line-height: 32px;
+    }
+
+    p {
+      color: $light-gray;
+      line-height: 24px;
+    }
+
+    .global-headers {
+      h3::before {
+        content: ' ';
+        width: 2px;
+        border-left: 1px solid $highlight-color;
+        position: relative;
+        top: 0;
+        right: 20px;
+      }
+    }
+
+    .vl {
+      border-left: 1px solid $highlight-color;
+      height: 25px;
+      margin: 25px;
+      margin-left: 110px;
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 1024px) {
+    #global-statistics {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-left: 50px;
+      gap: 20px;
+    }
+
+    .vl {
+      display: none; // Hide dividers on smaller screens
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .globe-container {
+      display: none;
+    }
+  }
+}

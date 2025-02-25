@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@font-face {
+  font-family: Inter;
+  src: url(/assets/fonts/Inter_18pt-Regular.ttf);
+}
+body {
+  font-family: "Inter", serif;
+}
+
+.globe-section {
+  display: flex;
+  flex-direction: column;
+  background: #0A2540;
+  color: rgb(49, 98, 127);
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.globe-section .container {
+  width: clamp(500px, 80%, 1080px);
+  margin: auto;
+  position: relative;
+}
+.globe-section .canvas {
+  width: 100%;
+  overflow-y: hidden;
+}
+.globe-section .globe-container {
+  position: absolute;
+  top: 0;
+  right: -300px;
+  width: 65%;
+  height: 100%;
+  z-index: 2;
+}
+.globe-section #global-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  z-index: 1;
+  padding: 60px 0;
+}
+.globe-section #global-title-container #global-scale {
+  font-size: 17px;
+  color: #00D4FF;
+}
+.globe-section #global-title-container #global-backbone {
+  color: #FFFFFF;
+  font-size: 35px;
+  line-height: 48px;
+}
+.globe-section #global-title-container #global-content {
+  color: #ADBDCC;
+  font-size: 17px;
+  line-height: 28px;
+}
+.globe-section #global-statistics {
+  display: flex;
+  gap: 60px;
+  width: clamp(500px, 100%, 1080px);
+  margin: auto;
+  z-index: 6;
+  margin-bottom: 200px;
+  position: relative;
+  transform: translateY(100%);
+}
+.globe-section #global-statistics h3 {
+  color: #FFFFFF;
+  font-size: 24px;
+  line-height: 32px;
+}
+.globe-section #global-statistics p {
+  color: #ADBDCC;
+  line-height: 24px;
+}
+.globe-section #global-statistics .global-headers h3::before {
+  content: " ";
+  width: 2px;
+  border-left: 1px solid #00D4FF;
+  position: relative;
+  top: 0;
+  right: 20px;
+}
+.globe-section #global-statistics .vl {
+  border-left: 1px solid #00D4FF;
+  height: 25px;
+  margin: 25px;
+  margin-left: 110px;
+}
+@media (max-width: 1024px) {
+  .globe-section #global-statistics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 50px;
+    gap: 20px;
+  }
+  .globe-section .vl {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  .globe-section .globe-container {
+    display: none;
+  }
+}/*# sourceMappingURL=globe-styles.css.map */
