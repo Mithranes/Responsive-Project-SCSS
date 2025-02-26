@@ -1,0 +1,142 @@
+$primary-color: #0A2540;
+$background-color: #ffff;
+$gradient-color: #424770;
+$font-family: Inter;
+$font-size-small: 14px;
+$font-size-smaller: 12px;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@font-face {
+  font-family: $font-family;
+  src: url(../assets/fonts/Inter_18pt-Regular.ttf);
+}
+
+#footer {
+  @include flex-center;
+  flex-direction: column;
+  font-family: $font-family;
+  color: $primary-color;
+  background-color: $background-color;
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+  padding-top: 300px;
+}
+
+@media (max-width: 768px) {
+  #footer {
+    clip-path: polygon(0 3%, 100% 0, 100% 100%, 0% 100%);
+    padding-top: 500px;
+  }
+}
+
+#title-container {
+  margin: 0 50px;
+}
+
+#titles p {
+  font-size: $font-size-small;
+}
+
+#footer-list {
+  display: flex;
+  padding-top: 120px;
+  width: clamp(500px, 80%, 1080px);
+}
+
+#footer-list ul {
+  list-style: none;
+  margin: 0 100px 0 0;
+}
+
+#footer-list ul li {
+  margin: 4px;
+  font-size: $font-size-small;
+  line-height: 24px;
+}
+
+.copyright {
+  padding: 10px 0;
+  margin-left: 50px;
+  font-size: $font-size-small;
+}
+
+.separator, .separator-list {
+  width: 1px;
+  border: none;
+  margin: 0;
+  background: linear-gradient($gradient-color, #0000);
+}
+
+.separator {
+  height: 100vh;
+}
+
+.separator-list {
+  height: 50vh;
+}
+
+#footer-list ul:last-child {
+  margin-left: 0;
+}
+
+.arrow {
+  display: inline-block;
+  margin-right: 5px;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 1024px) {
+  #footer-list ul {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  #footer {
+    padding: 30px;
+  }
+  #title-container {
+    text-align: center;
+    margin: 0;
+  }
+  #footer-list ul {
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #footer {
+    padding: 30px;
+  }
+  #title-container {
+    text-align: center;
+    margin: 0;
+  }
+  #footer-list ul {
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  #footer {
+    padding: 20px;
+  }
+  #footer-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #footer-list ul {
+    margin: 10px 0;
+  }
+  #titles p, .copyright {
+    font-size: $font-size-smaller;
+  }
+  .copyright {
+    margin: 0;
+  }
+}

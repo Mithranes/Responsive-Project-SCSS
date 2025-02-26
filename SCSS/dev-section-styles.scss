@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@font-face {
+  font-family: Inter;
+  src: url(/assets/fonts/Inter_18pt-Regular.ttf);
+  font-family: Code;
+  src: url(/assets/fonts/SourceCodePro-Regular.ttf);
+}
+
+#dev-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #0a2540;
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+  padding: 300px 0;
+  font-family: Inter;
+
+  @media (max-width: 768px) {
+    clip-path: polygon(0 3%, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+#container {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  margin-bottom: 160px;
+}
+
+#developer-title-container {
+  margin: 40px 0 96px 36px;
+}
+
+#design-developers {
+  color: #00d4ff;
+  font-size: 17px;
+  line-height: 27px;
+  margin-bottom: 32px;
+}
+
+#ship-title {
+  color: #ffffff;
+  font-size: 36px;
+  line-height: 48px;
+  margin-bottom: 32px;
+}
+
+#developer-content {
+  color: #adbdcc;
+  font-size: 16.59px;
+  line-height: 28px;
+  margin-bottom: 32px;
+}
+
+.button {
+  background-color: #00d4ff;
+  border-radius: 16.5px;
+  width: 144px;
+  color: #0a2540;
+  outline: none;
+  cursor: pointer;
+  padding: 3px;
+}
+
+#code-snippet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  font-family: Code;
+}
+
+.line-number {
+  display: inline-block;
+  margin-right: 5px;
+  color: #6c738b;
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+.code-nav {
+  display: flex;
+  background-color: #0a2540;
+  font-family: Code;
+
+  nav {
+    display: flex;
+    background-color: #0a2540;
+    font-family: Code;
+
+    h3 {
+      font-size: 14px;
+      color: #8095ff;
+      cursor: pointer;
+      padding: 8px 16px;
+      transition: background 0.3s ease;
+      border-radius: 2px;
+
+      &:hover {
+        color: #06182c;
+        background-color: #8095ff;
+      }
+    }
+  }
+}
+
+.nav-stats {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #55718d;
+  font-weight: bold;
+  text-align: right;
+  margin-left: 200px;
+  margin-top: 10px;
+}
+
+#developer-footer {
+  width: clamp(320px, 80%, 1080px);
+  display: flex;
+  margin: auto;
+}
+
+.dev-headers {
+  color: white;
+  margin: 50px 70px 0 0;
+
+  h3 {
+    font-size: 13.71px;
+    line-height: 24px;
+
+    &::before {
+      content: " ";
+      width: 2px;
+      border-left: 1px solid #00d4ff;
+      position: relative;
+      top: 0;
+      right: 20px;
+    }
+  }
+}
+
+.dev-headers {
+    p {
+        color: #ADBDCC;
+        font-size: 13.59px;
+        line-height: 24px;    
+    }
+
+    img {
+        margin-left: -20px; /* Negative margin to create overlap */
+        align-items: center;
+        justify-content: center;
+    }
+
+    button {
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: #00D4FF;
+    }
+}
+
+.arrow-dev {
+    border: solid #00D4FF;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.arrow-button {
+    border: solid #0A2540;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.Container {
+    border-radius: 6px;
+    width: 540px;
+    height: 249px;
+    position: relative;
+    background: #0C2E4E;
+    color: white;
+    margin: 60px auto 0 auto;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.3);
+}
+
+.credit {
+    left: 50%;
+    bottom: 30px;
+    width: 300px;
+    position: fixed;
+    text-align: center;
+    margin-left: -150px;
+
+    p {
+        color: #6C738B;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 20px;
+
+        a {
+            color: #0000b3;
+            font-weight: 400;
+            text-decoration: none;
+
+            &:hover {
+                color: #5C33FF;
+            }
+        }
+    }
+}
+
+.code-snippet {
+    display: inline-block;
+    font-family: Code;
+    overflow: hidden;
+    width: 100%;
+    animation: typing 4s steps(40) 1s infinite, blink 0.75s step-end infinite;
+}
+
+.console {
+    background-color: black;
+    display: inline-block;
+    background-color: #06182C;
+    margin-top: -27px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.console-snippet {
+    overflow: hidden;
+    animation: typing 4s steps(40) 1s infinite, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    #container {
+        flex-direction: column;
+        margin: 50px;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 1100px) {
+    #container {
+        gap: 30px;
+    }
+
+    #ship-title {
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    #developer-content {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    #developer-footer {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    #dev-headers {
+        text-align: left;
+    }
+
+    .vl {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    #developer-footer {
+        display: flex;
+        flex-direction: column;
+    }
+}
